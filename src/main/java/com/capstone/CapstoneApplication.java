@@ -15,6 +15,7 @@ public class CapstoneApplication {
 		System.out.println("its part");
 		System.out.println("feature 2");
 		System.out.println("feature 3");
+		System.out.println("Feature 3 updating");
 	}
 
 }
