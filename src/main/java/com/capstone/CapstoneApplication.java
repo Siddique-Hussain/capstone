@@ -14,6 +14,7 @@ public class CapstoneApplication {
 		System.out.println("Its making more sense");
 		System.out.println("its part");
 		System.out.println("feature 2");
+		System.out.println("feature 3");
 	}
 
 }
