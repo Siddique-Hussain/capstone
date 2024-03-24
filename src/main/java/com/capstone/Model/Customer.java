@@ -23,4 +23,8 @@ private String City;
 @OneToMany(targetEntity = Account.class, cascade = CascadeType.ALL)
         @JoinColumn(name="Cust_Id", referencedColumnName = "Id")//account,customer
 List<Account> ac= new ArrayList<Account>();
+
+    public void addAc(Account acc) {
+         ac.add(acc);
+    }
 }
