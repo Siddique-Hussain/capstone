@@ -1,5 +1,7 @@
 package com.capstone.Controller;
 
+import com.capstone.Exception.ResourseNotFound;
+import com.capstone.Exception.ResourseNotFound;
 import com.capstone.Model.Customer;
 import com.capstone.Service.CustomerService;
 import jdk.jshell.spi.ExecutionControl;
@@ -24,18 +26,18 @@ public class CustomerController
     }
 
     @GetMapping("/customer/{CST_Id}")
-    public Optional<Customer> Find( @PathVariable Integer CST_Id) throws Exception
+    public Optional<Customer> Find( @PathVariable Integer CST_Id) throws ResourseNotFound
     {
         if(service.findCustomer(CST_Id).isEmpty())
         {
             System.out.println("IN CONTROLLER");
-            throw new Exception();
+            throw new ResourseNotFound("Customer not found");
 
         }
         return service.findCustomer(CST_Id);
     }
     @DeleteMapping("/customer/{CST_Id}")
-    public void Delete(@PathVariable Integer CST_Id)
+    public void Delete(@PathVariable Integer CST_Id) throws ResourseNotFound
     {
         System.out.println("Delet is tracking");
         service.deleteCustomer(CST_Id);
